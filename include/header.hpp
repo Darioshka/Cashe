@@ -34,10 +34,6 @@ public:
             ++n;
         }
         meaningExp.push_back(1.5 * l3);
-        for (size_t i = 0; i < meaningExp.size(); ++i) {
-            std::cout << i << " experiment: size = " <<
-			meaningExp[i] <<  std::endl;
-        }
     }
 
     void createBuffer(unsigned size_exp) {
