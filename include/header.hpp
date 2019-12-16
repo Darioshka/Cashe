@@ -12,8 +12,6 @@
 
 using std::vector;
 using std::fstream;
-using std::cout;
-using std::endl;
 
 size_t l1, l2, l3;
 vector<unsigned> meaningExp;
@@ -37,7 +35,7 @@ public:
         }
         meaningExp.push_back(1.5 * l3);
         for (size_t i = 0; i < meaningExp.size(); ++i) {
-            cout << i << " experiment: size = " << meaningExp[i] << endl;
+            std::cout << i << " experiment: size = " << meaningExp[i] <<  std::endl;
         }
     }
 
@@ -126,29 +124,29 @@ public:
     }
 
     void printTravel_order(int PASS) {
-        cout << "investigation:" << endl;
+        std::cout << "investigation:" <<  std::endl;
         if (PASS == 0) {
-            cout << "\ttravel_variant: " << "direction" << endl;
+            std::cout << "\ttravel_variant: " << "direction" <<  std::endl;
         }
         if (PASS == 1) {
-            cout << "\ttravel_variant: " << "return" << endl;
+            std::cout << "\ttravel_variant: " << "return" <<  std::endl;
         }
         if (PASS == 2) {
-            cout << "\ttravel_variant: " << "random" << endl;
+            std::cout << "\ttravel_variant: " << "random" <<  std::endl;
         }
-        cout << "\texperiments: " << endl;
+        std::cout << "\texperiments: " <<  std::endl;
     }
 
     void printRes(clock_t TIME, int COUNT, unsigned MEANING) {
-        cout << "\t- experiment:" << endl;
-        cout << "\t\tnumber:" << COUNT + 1 << endl;
-        cout << "\t\tinput data: " << endl;
-        cout << "\t\t buffer_size:";
-        cout << MEANING << " byte ";
-        cout << endl << "\t\tresults:" << endl;
-        cout << "\t\t duration: ";
-        cout << TIME << "ms";
-        cout << endl;
+        std::cout << "\t- experiment:" <<  std::endl;
+        std::cout << "\t\tnumber:" << COUNT + 1 <<  std::endl;
+        std::cout << "\t\tinput data: " <<  std::endl;
+        std::cout << "\t\t buffer_size:";
+        std::cout << MEANING << " byte ";
+        std::cout <<  std::endl << "\t\tresults:" <<  std::endl;
+        std::cout << "\t\t duration: ";
+        std::cout << TIME << "ms";
+        std::cout <<  std::endl;
     }
 };
 #endif // INCLUDE_HEADER_HPP_
