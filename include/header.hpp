@@ -63,7 +63,6 @@ public:
         clock_t end = clock();
         clock_t time = end - begin;
         return time;
-
     }
 
     clock_t returnPass(unsigned numberExp) {
@@ -89,7 +88,6 @@ public:
 
         srand(time(NULL));
         random_shuffle(current_num.begin(), current_num.end());
-
         clock_t begin = clock();
         for (unsigned i = 0; i < 1000; ++i) {
             for (unsigned n = 0; n < meaningExp[numberExp]; ++n) {
@@ -125,9 +123,7 @@ public:
                     printRes(time, count, meaningExp[count]);
                 }
             }
-
         }
-
     }
 
     void printTravel_order(int PASS) {
