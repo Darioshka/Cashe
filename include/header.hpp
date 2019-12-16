@@ -9,7 +9,6 @@
 #include <ctime>
 #include <algorithm>
 #include <fstream>
-#include <iostream>
 
 using std::vector;
 using std::fstream;
@@ -43,9 +42,9 @@ public:
         buffer = new unsigned char[size_exp];
     }
 
-    void warmUp_cache(size_t size_exp) {
-        for (size_t j = 0; j < 10; ++j) {
-            for (size_t n = 0; n < size_exp; ++n) {
+    void warmUp_cache(unsigned size_exp) {
+        for (unsigned j = 0; j < 10; ++j) {
+            for (unsigned n = 0; n < size_exp; ++n) {
                 buffer[n] = static_cast<char>(rand_r(&n) % 256 - 128);
             }
         }
