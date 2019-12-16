@@ -9,9 +9,7 @@
 #include <ctime>
 #include <algorithm>
 #include <iostream>
-#include <stdint.h>
 
-using std::int64_t;
 using std::vector;
 using std::fstream;
 using std::cout;
@@ -104,7 +102,7 @@ public:
             const int ret = 1;
             const int run = 2;
             printTravel_order(pass);
-            for (int64_t count = 0; count < meaningExp.size(); ++count) {
+            for (int count = 0; count < 7; ++count) {
                 clock_t time;
                 createBuffer(meaningExp[count]);
                 warmUp_cache(meaningExp[count]);
