@@ -75,7 +75,6 @@ public:
         clock_t end = clock();
         clock_t time = end - begin;
         return time;
-
     }
 
     clock_t randomPass(unsigned numberExp) {
