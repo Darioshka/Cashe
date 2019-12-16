@@ -2,6 +2,7 @@
 
 #ifndef INCLUDE_HEADER_HPP_
 #define INCLUDE_HEADER_HPP_
+
 #include <vector>
 #include <string>
 #include <cmath>
@@ -11,9 +12,12 @@
 #include <fstream>
 
 
-using namespace std;
+
+
 using  std::vector;
-using std::ofstream;
+using std::fstream;
+using std:: cout;
+using std:: endl;
 
 
 size_t l1, l2, l3;
@@ -169,5 +173,6 @@ class Experiment{
             cout << TIME << "ms";
             cout << endl;
         }
+
 };
 #endif // INCLUDE_HEADER_HPP_
