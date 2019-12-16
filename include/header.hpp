@@ -12,6 +12,8 @@
 
 using std::vector;
 using std::fstream;
+using std::cout;
+using std::endl;
 
 size_t l1, l2, l3;
 vector<unsigned> meaningExp;
@@ -43,7 +45,7 @@ public:
     void warmUp_cache(size_t size_exp) {
         for (size_t j = 0; j < 10; ++j) {
             for (size_t n = 0; n < size_exp; ++n) {
-                buffer[n] = static_cast<char>(rand_r(&j) % 256 - 128);
+                buffer[n] = static_cast<char>(rand_r(&n) % 256 - 128);
             }
         }
     }
@@ -52,7 +54,7 @@ public:
         clock_t begin = clock();
         for (int d = 0; d < 1000; ++d) {
             for (unsigned i = 0; i < meaningExp[numberExp]; ++i) {
-                buffer[i] = static_cast<char>(rand_r(&d) % 256 - 128);
+                buffer[i] = static_cast<char>(rand_r(&i) % 256 - 128);
             }
         }
         clock_t end = clock();
@@ -64,7 +66,7 @@ public:
         clock_t begin = clock();
         for (int d = 0; d < 1000; ++d) {
             for (unsigned i = meaningExp[numberExp] - 1; i > 0; --i) {
-                buffer[i] = static_cast<char>(rand_r(&d) % 256 - 128);
+                buffer[i] = static_cast<char>(rand_r(&i) % 256 - 128);
             }
         }
         clock_t end = clock();
@@ -86,7 +88,7 @@ public:
         for (unsigned i = 0; i < 1000; ++i) {
             for (unsigned n = 0; n < meaningExp[numberExp]; ++n) {
                 buffer[current_num[n]] =
-                        static_cast<char>(rand_r(&i) % 255 - 128);
+                        static_cast<char>(rand_r(&n) % 255 - 128);
             }
         }
         clock_t end = clock();
@@ -123,27 +125,27 @@ public:
     void printTravel_order(int PASS) {
         std::cout << "investigation:" <<  std::endl;
         if (PASS == 0) {
-            std::cout << "\ttravel_variant: " << "direction" <<  std::endl;
+            cout << "\ttravel_variant: " << "direction" <<  endl;
         }
         if (PASS == 1) {
-            std::cout << "\ttravel_variant: " << "return" <<  std::endl;
+            cout << "\ttravel_variant: " << "return" <<  endl;
         }
         if (PASS == 2) {
-            std::cout << "\ttravel_variant: " << "random" <<  std::endl;
+            cout << "\ttravel_variant: " << "random" << endl;
         }
-        std::cout << "\texperiments: " <<  std::endl;
+        cout << "\texperiments: " << endl;
     }
 
     void printRes(clock_t TIME, int COUNT, unsigned MEANING) {
-        std::cout << "\t- experiment:" <<  std::endl;
-        std::cout << "\t\tnumber:" << COUNT + 1 <<  std::endl;
-        std::cout << "\t\tinput data: " <<  std::endl;
-        std::cout << "\t\t buffer_size:";
-        std::cout << MEANING << " byte ";
-        std::cout <<  std::endl << "\t\tresults:" <<  std::endl;
-        std::cout << "\t\t duration: ";
-        std::cout << TIME << "ms";
-        std::cout <<  std::endl;
+        cout << "\t- experiment:" <<  endl;
+        cout << "\t\tnumber:" << COUNT + 1 <<  endl;
+        cout << "\t\tinput data: " <<  endl;
+        cout << "\t\t buffer_size:";
+        cout << MEANING << " byte ";
+        cout <<  endl << "\t\tresults:" <<  endl;
+        cout << "\t\t duration: ";
+        cout << TIME << "ms";
+        cout <<  endl;
     }
 };
 #endif // INCLUDE_HEADER_HPP_
