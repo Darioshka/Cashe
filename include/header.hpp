@@ -9,6 +9,7 @@
 #include <ctime>
 #include <algorithm>
 #include <fstream>
+#include <iostream>
 
 using std::vector;
 using std::fstream;
